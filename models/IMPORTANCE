@@ -1,0 +1,7 @@
+1. Common Attributes/Methods: I anticipate that job seekers and employers will share common attributes or methods (e.g., user authentication, timestamps, or other generic data), a base model can help avoid code duplication and ensure consistency.
+
+2. Code Reusability: I plan to add additional models in the future (e.g., messages, reviews, or other entities related to job seeking and employment), having a base model can facilitate code reusability.
+
+3. Consistency: A base model can help maintain a consistent structure across different models, making the codebase more organized and easier to understand.
+
+4. Framework Considerations: Some web frameworks dont have conventions for models.

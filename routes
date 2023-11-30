@@ -1,0 +1,102 @@
+Routes for Jobs
+1. Get All Jobs
+    •	Endpoint: /jobs
+    •	Method: GET
+    •	Description: Retrieves a list of all jobs.
+    • 	Response: JSON array of job objects.
+2. Get a Specific Job
+    •	Endpoint: /job/<job_id>
+    •	Method: GET
+    •	Description: Retrieves a specific job by its ID.
+    •	Response: JSON representation of the job or an error message if not found.
+3. Create a New Job
+    •	Endpoint: /job
+    •	Method: POST
+    •	Description: Creates a new job.
+    •	Request Data: JSON object with job details.
+    •	Response: JSON representation of the created job or an error message.
+Routes for Job Seekers
+4. Get All Job Seekers
+    •	Endpoint: /job_seekers
+    •	Method: GET
+    •	Description: Retrieves a list of all job seekers.
+    •	Response: JSON array of job seeker objects.
+5. Get a Specific Job Seeker
+    •	Endpoint: /job_seeker/<job_seeker_id>
+    •	Method: GET
+    •	Description: Retrieves a specific job seeker by their ID.
+    •	Response: JSON representation of the job seeker or an error message if not found.
+6. Create a New Job Seeker
+    •	Endpoint: /job_seeker
+    •	Method: POST
+    •	Description: Creates a new job seeker.
+    •	Request Data: JSON object with job seeker details.
+    •	Response: JSON representation of the created job seeker or an error message.
+Routes for Employers
+7. Get All Employers
+    •	Endpoint: /employers
+    •	Method: GET
+    •	Description: Retrieves a list of all employers.
+    •	Response: JSON array of employer objects.
+8. Get a Specific Employer
+    •	Endpoint: /employer/<employer_id>
+    •	Method: GET
+    •	Description: Retrieves a specific employer by their ID.
+    •	Response: JSON representation of the employer or an error message if not found.
+9. Create a New Employer
+    •	Endpoint: /employer
+    •	Method: POST
+    •	Description: Creates a new employer.
+    •	Request Data: JSON object with employer details.
+    •	Response: JSON representation of the created employer or an error message.
+Routes for Job Applications
+10. Get All Job Applications
+    •	Endpoint: /job_applications
+    •	Method: GET
+    •	Description: Retrieves a list of all job applications.
+    •	Response: JSON array of job application objects.
+11. Get a Specific Job Application
+    •	Endpoint: /job_application/<job_application_id>
+    •	Method: GET
+    •	Description: Retrieves a specific job application by its ID.
+    •	Response: JSON representation of the job application or an error message if not found.
+12. Create a New Job Application
+    •	Endpoint: /job_application
+    •	Method: POST
+    •	Description: Creates a new job application.
+    •	Request Data: JSON object with job application details.
+    •	Response: JSON representation of the created job application or an error message.
+Routes for Messages
+13. Get All Messages
+    •	Endpoint: /messages
+    •	Method: GET
+    •	Description: Retrieves a list of all messages.
+    •	Response: JSON array of message objects.
+14. Get a Specific Message
+    •	Endpoint: /message/<message_id>
+    •	Method: GET
+    •	Description: Retrieves a specific message by its ID.
+    •	Response: JSON representation of the message or an error message if not found.
+15. Create a New Message
+    •	Endpoint: /message
+    •	Method: POST
+    •	Description: Creates a new message.
+    •	Request Data: JSON object with message details.
+    •	Response: JSON representation of the created message or an error message.
+Routes for Reviews
+16. Get All Reviews
+    •	Endpoint: /reviews
+    •	Method: GET
+    •	Description: Retrieves a list of all reviews.
+    •	Response: JSON array of review objects.
+17. Get a Specific Review
+    •	Endpoint: /review/<review_id>
+    •	Method: GET
+    •	Description: Retrieves a specific review by its ID.
+    •	Response: JSON representation of the review or an error message if not found.
+18. Create a New Review
+    •	Endpoint: /review
+    •	Method: POST
+    •	Description: Creates a new review.
+    •	Request Data: JSON object with review details.
+    •	Response: JSON representation of the created review or an error message.
