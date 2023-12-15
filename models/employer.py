@@ -1,5 +1,6 @@
 from models.base_model import BaseModel
 from models.job_application import JobApplication
+from models.job import Job
 
 class Employer(BaseModel):
     def __init__(self, company_name, industry, email, password, age, *args, **kwargs):
@@ -9,6 +10,7 @@ class Employer(BaseModel):
         self.email = email
         self.password = password
         self.age = age
+        self.jobs = []
 
     def __str__(self):
         return "[Employer] ({}) {}".format(self.id, self.__dict__)
@@ -30,6 +32,9 @@ class Employer(BaseModel):
 
     def list_applications(self, job):
         return JobApplication.list_all(filter_condition=lambda app: app.job_id == job.id)
+
+    def save(self):
+        pass
 
 class EmployerAuth:
     employers = []

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from models.base_model import BaseModel
 from models.job import Job
 from models.job_seeker import JobSeeker
@@ -15,6 +15,42 @@ BaseModel._FileStorage__file_path = "file.json"
 storage = BaseModel.storage
 storage.reload()
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/api/job-applications', methods=['POST'])
+def apply_for_job():
+    data = request.json
+    job_id = data["job_id"]
+    job = next((job for job in jobs if job["id"] == job_id), None)
+
+    if job:
+        application = {
+            "job_seeker_id": data["job_seeker_id"],
+            "job_id": job_id,
+            "status": "Pending"
+        }
+        job_applications.append(application)
+        return jsonify(application), 201
+    else:
+        return jsonify({"error": "Job not found"}), 404
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        age = request.form['age']
+        password = request.form['password']
+        job_seeker = JobSeekerAuth.register(name, email, age, password)
+        return redirect(url_for('success'))
+    return render_template('register.html')
+
+@app.route('/success')
+def success():
+    return render_template('success.html')
+
 # Routes for jobs
 @app.route('/jobs', methods=['GET'])
 def get_jobs():
@@ -23,10 +59,14 @@ def get_jobs():
 
 @app.route('/job/<job_id>', methods=['GET'])
 def get_job(job_id):
+    print(f"Attempting to retrieve job with ID: {job_id}")
     job = storage.get(Job, job_id)
     if job:
+        print(f"Job found: {job.to_dict()}")
         return jsonify(job.to_dict())
-    return jsonify({'error': 'Job not found'}), 404
+    else:
+        print(f"Job not found")
+        return jsonify({'error': 'Job not found'}), 404
 
 @app.route('/job', methods=['POST'])
 def create_job():
