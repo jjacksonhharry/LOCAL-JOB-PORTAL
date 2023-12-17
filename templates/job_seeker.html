@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job seeker dasboard</title>
-    <link rel="stylesheet" href="styles/job_seeker.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='job_seeker.css') }}">
     <script src="styles/job_seeker.js" defer></script>
 </head>
 <body>
@@ -16,14 +16,14 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="job_seeker.html">JOB SEEKER DASHBOARD</a></li>
-                    <li><a href="employer.html">JOB EMPLOYER DASHBOARD</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="{{ url_for('job_seeker') }}">JOB SEEKER DASHBOARD</a></li>
+                    <li><a href="{{ url_for('employer') }}">JOB EMPLOYER DASHBOARD</a></li>
+                    <li><a href="{{ url_for('employer') }}">ABOUT</a></li>
                 </ul>
             </div>
         </div>
         <div class="jobseeker-icon">
-            <img src="styles/empo_back_2.png" alt="Ajira Icon">
+            <img src="styles/images/empo_back_2.png" alt="Ajira Icon">
         </div>
         <div class="search">
             <h1>Job Search</h1>

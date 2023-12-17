@@ -19,6 +19,18 @@ storage.reload()
 def home():
     return render_template('index.html')
 
+@app.route('/job_seeker')
+def job_seeker():
+    return render_template('job_seeker.html')
+
+@app.route('/employer')
+def employer():
+    return render_template('employer.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/api/job-applications', methods=['POST'])
 def apply_for_job():
     data = request.json
@@ -46,10 +58,6 @@ def register():
         job_seeker = JobSeekerAuth.register(name, email, age, password)
         return redirect(url_for('success'))
     return render_template('register.html')
-
-@app.route('/success')
-def success():
-    return render_template('success.html')
 
 # Routes for jobs
 @app.route('/jobs', methods=['GET'])

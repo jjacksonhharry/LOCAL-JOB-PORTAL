@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajira's Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="main">
@@ -15,9 +15,9 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="pages/job_seeker.html">JOB SEEKER DASHBOARD</a></li>
-                    <li><a href="pages/employer.html">JOB EMPLOYER DASHBOARD</a></li>
-                    <li><a href="pages/about.html">ABOUT</a></li>
+                    <li><a href="{{ url_for('job_seeker') }}">JOB SEEKER DASHBOARD</a></li>
+                    <li><a href="{{ url_for('employer') }}">JOB EMPLOYER DASHBOARD</a></li>
+                    <li><a href="{{ url_for('employer') }}">ABOUT</a></li>
                 </ul>
             </div>
         </div>
